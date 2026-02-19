@@ -1,0 +1,15 @@
+{
+  "name": "sell-suite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel -r run dev",
+    "dev:client": "pnpm --filter @sell-suite/client dev",
+    "dev:server": "pnpm --filter @sell-suite/server dev",
+    "build": "pnpm -r run build",
+    "build:client": "pnpm --filter @sell-suite/client build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

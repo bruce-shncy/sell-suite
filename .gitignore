@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+
+# Laravel specific (in packages/server)
+packages/server/vendor/
+packages/server/.env
+packages/server/storage/*.key
+packages/server/database/*.sqlite
+
+# Vue/Vite specific (in packages/client)
+packages/client/dist/
