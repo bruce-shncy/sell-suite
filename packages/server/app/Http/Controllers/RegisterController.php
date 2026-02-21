@@ -21,6 +21,7 @@ class RegisterController extends Controller
         
 
         $user->assignRole(Roles::MERCHANT->value);
+        
         event(new Registered($user));
 
         Auth::login($user);

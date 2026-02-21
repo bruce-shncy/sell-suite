@@ -36,7 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    protected $appends = ['roles'];
+    protected $appends = ['role'];
 
     /**
      * Get the attributes that should be cast.
@@ -60,4 +60,15 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(SocialAccount::class);
     }
+
+    public function createSocialAccount($oauthUser): void
+    {
+        $this->socialAccounts()->create([
+            'provider' => 'google',
+            'provider_user_id' => $oauthUser->getId(),
+            'email' => $oauthUser->getEmail(),
+            'avatar' => $oauthUser->getAvatar(),
+        ]);
+    }
+
 }

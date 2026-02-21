@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        $request->session()->regenerate();
+        $request->session()->regenerateToken();
 
         return response()->json(['message' => 'Logged out.']);
     
